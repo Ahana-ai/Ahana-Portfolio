@@ -46,13 +46,3 @@
   height: 3.5em;
   border-radius: 10%;
 }*/
-
-#title {
-  position:absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -113px;
-  margin-top: -48px;
-  width: 226px;
-  height: 96px;
-}
