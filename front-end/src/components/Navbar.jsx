@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -33,10 +33,32 @@ const MenuText = styled(MenuItem)`
 `;
 
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [currentHash, setCurrentHash] = useState("");
+  const handleHashChange = () => {
+    const hash = window.location.hash;
+    setCurrentHash(hash);
+  };
+
+  useEffect(() => {
+    window.addEventListener("hashchange", handleHashChange);
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  const handleNavLinkClick = (hash) => {
+    setCurrentHash(hash);
+    window.location.hash = hash;
+    handleCloseNavMenu();
+  };
+  
+
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
+
+    handleCloseNavMenu();
   };
 
   const handleCloseNavMenu = () => {
@@ -110,7 +132,7 @@ const Navbar = () => {
               justifyContent: "end",
             }}
           >
-            {pages.map((page) => (
+            {/* {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -120,6 +142,31 @@ const Navbar = () => {
                   display: "block",
 
                   "&:hover , &:active": {
+                    backgroundColor: "#F0F0F0",
+                    borderRadius: "10%",
+                    fontWeight: "bold",
+                    color: "black",
+                  },
+                  "&:focus": {
+                    outline: "2px solid white",
+                  },
+                }}
+              >
+                {page}
+              </Button>
+            ))} */}
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={() => handleNavLinkClick(`#${page.toLowerCase()}`)}
+                sx={{
+                  my: 2,
+                  color:
+                    currentHash === `#${page.toLowerCase()}`
+                      ? "#a09bdc"
+                      : "white",
+                  display: "block",
+                  "&:hover , &:active ": {
                     backgroundColor: "#F0F0F0",
                     borderRadius: "10%",
                     fontWeight: "bold",
