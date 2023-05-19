@@ -15,7 +15,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import logo from "../assets/appLogo.png";
 import { styled } from "@mui/material";
 
-const pages = ["Home", "Skills", "Projects", "Blog"];
+const pages = ["Home", "About", "Skills", "Projects", "Blog"];
 
 const MenuText = styled(MenuItem)`
   background-color: #121211;
@@ -58,7 +58,7 @@ const Navbar = () => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
 
-    handleCloseNavMenu();
+    // handleCloseNavMenu();
   };
 
   const handleCloseNavMenu = () => {

@@ -4,6 +4,8 @@ import Background from "./components/Background";
 import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import About from "./components/About";
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
       <Box>
         <Navbar />
         <Banner />
+        <About />
         <Skills />
+        <Projects />
       </Box>
     </>
   );
