@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, styled } from "@mui/material";
+import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import { useEffect, useState } from "react";
 import TextTransition, { presets } from "react-text-transition";
 import AhanaImg from "../assets/AhanaImg.jpg";
@@ -102,7 +102,7 @@ const Banner = () => {
   };
 
   return (
-    <>
+    <Container id="home">
       <Box>
         <Grid
           container
@@ -131,7 +131,7 @@ const Banner = () => {
               sx={{
                 fontWeight: "600",
                 fontStyle: "oblique",
-                marginLeft: {sm: "20px", md: "30%"},
+                // marginLeft: {sm: "20px", md: "30%"},
                 letterSpacing: "2px",
                 wordSpacing: "4px"
               }}
@@ -160,7 +160,7 @@ const Banner = () => {
             <Typography
               variant="h6"
               sx={{
-                marginLeft: {sm: "20px", md: "30%"},
+                // marginLeft: {sm: "20px", md: "30%"},
               }}
             >
               <TextTransition springConfig={presets.wobbly} inline={true}>
@@ -170,7 +170,7 @@ const Banner = () => {
             <Typography
               sx={{
                 wordBreak: "break-word",
-                marginLeft: {sm: "20px", md: "30%"},
+                // marginLeft: {sm: "20px", md: "30%"},
                 marginRight: {sm: "20px", xs: "20px"}
               }}
             >
@@ -540,7 +540,7 @@ const Banner = () => {
           </Grid>
         </Grid>
       </Box>
-    </>
+    </Container>
   );
 };
 

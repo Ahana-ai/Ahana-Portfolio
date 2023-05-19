@@ -12,7 +12,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import logo from "../assets/Logo.jpg";
+import logo from "../assets/appLogo.png";
 import { styled } from "@mui/material";
 
 const pages = ["Home", "Skills", "Projects", "Blog"];
