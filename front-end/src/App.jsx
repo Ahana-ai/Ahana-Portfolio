@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       <Background />
+      <Navbar />
       <Box>
-        <Navbar />
         <Banner />
         <About />
         <Skills />

@@ -87,7 +87,7 @@ const Banner = () => {
         duration: 5,
         repeat: Infinity,
         repeatDelay: 1,
-        ease: "ease-in-out"
+        ease: "ease-in-out",
       },
     },
     hidden: {
@@ -115,7 +115,7 @@ const Banner = () => {
             justifyContent: "center",
             alignItems: "center",
             justifyItems: "center",
-            margin: "auto auto"
+            margin: "auto auto",
           }}
         >
           <Grid
@@ -133,15 +133,17 @@ const Banner = () => {
                 fontStyle: "oblique",
                 // marginLeft: {sm: "20px", md: "30%"},
                 letterSpacing: "2px",
-                wordSpacing: "4px"
+                wordSpacing: "4px",
               }}
             >
               <motion.div
-                style={{
-                  // overflow: "hidden",
-                  // display: "flex",
-                  // fontSize: "2rem",
-                }}
+                style={
+                  {
+                    // overflow: "hidden",
+                    // display: "flex",
+                    // fontSize: "2rem",
+                  }
+                }
                 variants={container}
                 initial="hidden"
                 animate="visible"
@@ -159,9 +161,11 @@ const Banner = () => {
             </Typography>
             <Typography
               variant="h6"
-              sx={{
-                // marginLeft: {sm: "20px", md: "30%"},
-              }}
+              sx={
+                {
+                  // marginLeft: {sm: "20px", md: "30%"},
+                }
+              }
             >
               <TextTransition springConfig={presets.wobbly} inline={true}>
                 {TEXTS[index % TEXTS.length]}
@@ -171,7 +175,7 @@ const Banner = () => {
               sx={{
                 wordBreak: "break-word",
                 // marginLeft: {sm: "20px", md: "30%"},
-                marginRight: {sm: "20px", xs: "20px"}
+                marginRight: { sm: "20px", xs: "20px" },
               }}
             >
               Currently, I am pursuing my education at Hooghly Engineering and
